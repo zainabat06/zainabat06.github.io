@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7f8fa"><title>مَدار — معرفة تُعاش</title>
+<style>
+:root{--bg:#f7f8fa;--paper:#fff;--ink:#172d30;--muted:#708082;--line:#e5ebea;--green:#24685b;--mint:#e5f1e9;--purple:#7563bc;--radius:22px}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Tahoma,Arial,sans-serif;font-size:14px;line-height:1.7}button,input,select,textarea{font:inherit}button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}button,a{touch-action:manipulation}button{cursor:pointer}button{color:inherit}a{color:inherit;text-decoration:none}button{border:0;background:none}button:disabled{opacity:.45;cursor:default}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #cb9759;outline-offset:4px}svg{vertical-align:middle;flex-shrink:0}h1,h2,h3,p{margin:0}h1{font-size:clamp(27px,3.1vw,43px);line-height:1.55;letter-spacing:-1.2px}h2{font-size:23px;letter-spacing:-.6px}h3{font-size:17px}small,.small{font-size:12px}.muted{color:var(--muted)}.ltr{direction:ltr;unicode-bidi:embed}.row{display:flex;align-items:center;gap:12px}.between{justify-content:space-between}.wrap{flex-wrap:wrap}.stack{display:grid;gap:18px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 18px;border-radius:12px;font-weight:bold;min-height:44px;transition:background .2s,transform .2s}.btn:hover{transform:translateY(-1px)}.primary{background:var(--green);color:#fff}.primary:hover{background:#194f44}.soft{background:#edf2f0}.outline{border:1px solid var(--line);background:#fff}.iconbtn{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:12px;border:1px solid var(--line);background:#fff}.iconbtn:hover{background:var(--mint)}.pill{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:9px;background:#f1f4f3;font-size:11px;white-space:nowrap}.chip{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);padding:7px 14px;border-radius:30px;white-space:nowrap;min-height:38px;background:#fff}.chip.active{background:var(--ink);color:#fff;border-color:var(--ink)}.chips{display:flex;gap:8px;overflow:auto;padding:4px 1px;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}.label{font-size:11px;letter-spacing:1px;color:var(--muted)}.empty{padding:45px 20px;text-align:center;border:1px dashed #ccd8d3;border-radius:18px;color:var(--muted)}.empty svg{display:block;margin:0 auto 12px}.grow{flex:1}.check{height:26px;width:26px;border:1.5px solid #c8d5ce;border-radius:50%;display:inline-grid;place-items:center;flex-shrink:0;color:#fff}.check.done{background:var(--green);border-color:var(--green)}.line{height:6px;background:#eef1ef;border-radius:10px;overflow:hidden}.line>i{display:block;height:100%;border-radius:10px;background:var(--green);transition:width .3s}.formfield{display:grid;gap:7px}.formfield input,.formfield select,.formfield textarea,.select{background:#fafcfa;border:1px solid #dce4df;border-radius:11px;padding:10px 12px;width:100%;color:var(--ink)}textarea{resize:vertical;min-height:88px}
+.shell{display:grid;grid-template-columns:208px minmax(0,1fr);min-height:100vh}.sidebar{height:100vh;position:sticky;top:0;background:#fff;border-inline-end:1px solid var(--line);padding:32px 21px;display:flex;flex-direction:column;gap:32px}.brand{gap:10px}.brand strong{font-size:28px;line-height:1.2;letter-spacing:-1px}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:.4px}.brandmark{width:43px;height:43px;background:var(--green);border-radius:15px;display:grid;place-items:center;color:#fff}.nav{display:grid;gap:9px}.nav button{display:flex;align-items:center;gap:12px;padding:12px 15px;text-align:start;color:#768582;border-radius:12px;font-size:13px;min-height:46px}.nav button.active{background:#eaf2ed;color:#24685b;font-weight:bold}.nav button:hover{background:#f1f5f2}.sidequote{margin-top:auto;padding:17px;background:#f6f7f2;border-radius:15px;font-size:12px;color:#69766d}.sidequote strong{display:block;color:#374b42;margin-bottom:5px}.storage{font-size:10px;line-height:1.8;color:var(--muted)}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 36px;border-bottom:1px solid var(--line);background:#ffffffb8}.search{display:flex;align-items:center;gap:10px;width:min(400px,60%);color:#8b9897}.search input{border:0;outline:none;background:transparent;width:100%;font-size:12px;min-height:40px}.avatar{width:39px;height:39px;display:grid;place-items:center;background:#eee9df;border-radius:50%;font-size:16px;color:#846343}.topbrand{display:none}main{max-width:1430px;margin:auto;padding:28px 36px 45px}.pagehead{margin-bottom:26px}.pagehead p{font-size:13px;color:var(--muted);margin-top:5px}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;background:#eaf1eb;border:1px solid #dfebe2;border-radius:26px;overflow:hidden;min-height:268px;padding:30px 38px;position:relative;margin-bottom:22px}.herotext{z-index:1;align-self:center}.eyebrow{display:inline-flex;gap:8px;align-items:center;color:var(--green);font-size:11px;margin-bottom:10px}.dot{width:6px;height:6px;border-radius:50%;background:currentColor}.hero h1 em{font-style:normal;color:var(--green)}.hero p{margin:10px 0 19px;font-size:13px;color:#738477}.universe{position:relative;display:grid;place-items:center;min-height:210px;direction:ltr}.universe:before{content:"";position:absolute;width:232px;height:232px;border:1px solid #bdd4c3;border-radius:50%}.orbit{position:absolute;width:310px;height:174px;border:1px solid #b9cec1;border-radius:50%;transform:rotate(-32deg)}.orbit.two{transform:rotate(45deg);width:275px;height:190px}.core{width:116px;height:116px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(135deg,#fcfff6,#bbd9b5);box-shadow:0 14px 35px #718b7025;color:#426f4d;z-index:1}.sat{position:absolute;width:43px;height:43px;border-radius:14px;background:#fff;box-shadow:0 4px 12px #2349370c;display:grid;place-items:center;z-index:2}.sat.a{transform:translate(116px,-57px);color:#8876c7}.sat.b{transform:translate(-125px,32px);color:#cd9858}.sat.c{transform:translate(66px,100px);color:#5f8d89}.sat.d{transform:translate(-37px,-103px);color:#7c9981}.stars{position:absolute;left:0;bottom:0;font-size:10px;color:#759381;letter-spacing:5px}
+.overview{display:grid;grid-template-columns:1.8fr 1fr;gap:18px;margin-bottom:30px}.todaymini{border:1px solid var(--line);border-radius:19px;background:#fff;padding:21px 23px}.ring{width:54px;height:54px;display:grid;place-items:center;background:conic-gradient(var(--green) var(--percent),#eef2ef 0);border-radius:50%;flex-shrink:0}.ring span{display:grid;place-items:center;width:43px;height:43px;background:#fff;border-radius:50%;font-size:12px;font-weight:bold}.metrics{display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border:1px solid var(--line);border-radius:19px;padding:19px 8px;gap:4px;text-align:center}.metrics>div+div{border-inline-start:1px solid var(--line)}.metrics b{font-size:24px;display:block;line-height:1.4}.metrics small{color:var(--muted);font-size:10px}.sectionhead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 15px}.sectionhead .muted{font-size:12px}.worldgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.worldcard{background:#fff;border:1px solid var(--line);border-radius:21px;overflow:hidden;transition:transform .25s,box-shadow .25s;position:relative}.worldcard:hover{transform:translateY(-5px);box-shadow:0 15px 35px #1932290d}.worldhit{display:block;width:100%;text-align:start;padding:0}.worldart{height:128px;position:relative;display:grid;place-items:center;background:var(--tint);overflow:hidden;color:var(--color)}.worldart:before,.worldart:after{content:"";position:absolute;border:1px solid currentColor;opacity:.12;width:180px;height:180px;border-radius:50%;left:-70px;top:25px}.worldart:after{width:130px;height:130px;left:auto;right:-40px;top:-65px}.worldart svg{transition:transform .4s}.worldcard:hover .worldart svg{transform:scale(1.08) rotate(-3deg)}.worldindex{position:absolute;right:16px;top:12px;font-size:10px;opacity:.55}.worldbody{padding:17px 19px 16px}.worldbody h3{font-size:16px}.worldbody p{font-size:11px;color:var(--muted);margin:3px 0 14px}.worldfooter{display:flex;align-items:center;justify-content:space-between;font-size:10px;color:#82908a;margin-bottom:9px}.follow{position:absolute;top:12px;left:12px;background:#ffffffad;border-radius:50%;width:30px;height:30px;color:#788a7c;display:grid;place-items:center}.follow.on{color:#a5772e;background:#fff8e9}.bridge{margin-top:26px;padding:23px 26px;border:1px solid #e2def1;border-radius:20px;background:#f1eff8;display:flex;align-items:center;justify-content:space-between;gap:20px}.bridge p{font-size:12px;color:#847898;margin-top:4px}
+.resourcegrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.resource{border:1px solid var(--line);border-radius:17px;background:#fff;padding:18px;display:flex;flex-direction:column;gap:10px}.resource .rtype{width:42px;height:42px;background:var(--tint,#edf3ef);color:var(--color,var(--green));border-radius:12px;display:grid;place-items:center}.resource h3{font-size:14px;line-height:1.8}.resource p{font-size:11px;color:var(--muted)}.resource .actions{display:flex;align-items:center;gap:8px;margin-top:auto;padding-top:6px}.resource .btn{font-size:11px;padding:8px 12px;min-height:38px}.resource .iconbtn{width:36px;height:36px}.resource.complete{border-color:#b9d2c2}.bookmark.on{background:#f7eedb;color:#977032}.filters{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:19px}.filters select{width:auto;max-width:100%;font-size:12px}.filters .chip{font-size:12px}
+.dailywrap{display:grid;grid-template-columns:1.65fr 1fr;gap:22px}.panel{background:#fff;border:1px solid var(--line);border-radius:22px;padding:25px}.session{display:flex;gap:17px;padding:23px 0;border-bottom:1px solid var(--line)}.session:last-child{border:0}.stepnum{height:37px;width:37px;border-radius:12px;background:#edf4ee;color:var(--green);display:grid;place-items:center;flex-shrink:0;font-size:13px}.session h3{font-size:15px}.session p{font-size:12px;color:var(--muted);margin:4px 0 12px}.session .btn{font-size:12px;padding:8px 13px}.journal textarea{width:100%;border:1px solid var(--line);border-radius:13px;background:#fafbf8;padding:13px;margin:14px 0 9px;min-height:155px;font-size:13px}.journal h3{margin-top:8px}.journal p{font-size:12px;color:var(--muted)}.hint{font-size:11px;color:var(--muted);margin-top:12px}.calendar{display:grid;grid-template-columns:repeat(14,1fr);gap:5px;direction:ltr;margin:20px 0 10px}.daycell{aspect-ratio:1;border-radius:5px;background:#eef2ef;min-width:0;border:1px solid #e5ebe6}.daycell.active{background:#6a9b7d;border-color:#6a9b7d}.daycell.today{outline:2px solid #be9a5a;outline-offset:2px}.progresscols{display:grid;grid-template-columns:1.3fr 1fr;gap:22px}.balance{display:flex;gap:12px;align-items:center;margin-top:17px}.balance .line{flex:1}.balance strong{font-size:12px;width:126px}.balance small{width:30px;text-align:left}.timeline{margin-top:16px}.timeline>div{border-right:2px solid #d8e6dc;padding:0 18px 23px;margin-right:7px;position:relative}.timeline>div:before{content:"";width:10px;height:10px;border-radius:50%;position:absolute;right:-6px;top:6px;background:#80a58c;border:2px solid #fff}.timeline p{font-size:12px;color:var(--muted);margin-top:4px}.note{border:1px solid var(--line);border-radius:14px;padding:15px;margin-top:11px;font-size:13px;white-space:pre-wrap;overflow-wrap:anywhere}.note .muted{font-size:10px;display:block;margin-top:8px}.note button{float:left}
+.labgrid{display:grid;grid-template-columns:1.8fr 1fr;gap:22px}.labcanvas{border:1px solid var(--line);border-radius:18px;background:linear-gradient(#fff,#f5f8f6);overflow:hidden;min-width:0;padding:12px;margin:17px 0}.labcanvas svg{width:100%;height:auto;display:block;direction:ltr}.labcontrols label{display:block;font-size:12px;color:var(--muted);margin-bottom:22px}.labcontrols output{color:var(--green);font-weight:bold;float:left;font-size:13px}.labcontrols input[type=range]{width:100%;accent-color:var(--green);margin-top:15px;direction:ltr}.labstats{display:grid;grid-template-columns:1fr 1fr;gap:12px}.labstats div{border:1px solid var(--line);border-radius:13px;padding:12px}.labstats strong{display:block;font-size:21px;direction:ltr;text-align:right}.labstats small{color:var(--muted)}.question{padding:16px;background:#f0edf8;border-radius:14px;font-size:13px;margin-top:19px;color:#726191}
+dialog{padding:0;border:1px solid var(--line);border-radius:25px;background:#fbfcfa;color:var(--ink);width:min(900px,94vw);max-height:90vh;box-shadow:0 35px 100px #14271d3b}dialog::backdrop{background:#18372b75;backdrop-filter:blur(6px)}.dialoghead{padding:22px 28px;background:var(--tint,#edf4ef);display:flex;gap:15px;align-items:center}.dialoghead .grow p{font-size:12px;color:#6e7b72}.dialoghead h2{font-size:22px}.dialogtabs{display:flex;gap:12px;background:#fff;border-bottom:1px solid var(--line);padding:0 25px;position:sticky;top:0;z-index:2}.dialogtabs button{padding:15px 13px;font-size:13px;border-bottom:2px solid transparent}.dialogtabs button.active{color:var(--green);border-color:var(--green);font-weight:bold}.dialogbody{padding:24px 28px}.stepitem{display:flex;gap:13px;padding:17px 0;align-items:start;border-bottom:1px solid var(--line)}.stepitem p{font-size:12px;color:var(--muted)}.stepitem .pill{margin-bottom:6px}.project{background:#fff;border:1px solid var(--line);padding:23px;border-radius:19px;margin-top:16px}.project p{font-size:12px;color:var(--muted);margin:7px 0 12px}.project label{display:flex;gap:11px;padding:10px 0;cursor:pointer;font-size:13px}.project input{accent-color:var(--green);width:18px;height:18px}.settingsbody{padding:26px}.settingsbody .formfield{margin-bottom:17px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.notice{padding:13px 16px;border-radius:13px;background:#edf3ee;font-size:12px;color:#627a67;margin-bottom:17px}.settingsworlds{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 20px}.toast{position:fixed;bottom:28px;left:50%;transform:translate(-50%,15px);background:#183e32;color:#fff;padding:13px 22px;border-radius:12px;opacity:0;pointer-events:none;transition:.25s;z-index:20;max-width:90vw;font-size:12px;box-shadow:0 10px 30px #1a3a2820}.toast.show{transform:translate(-50%,0);opacity:1}.addform{padding:22px;background:#fff;border:1px solid var(--line);border-radius:17px;margin:16px 0}.addform .formgrid{margin:10px 0}.formerror{color:#a33d3d;font-size:12px}.footer{text-align:center;color:#8a9790;font-size:10px;margin-top:36px}.loading{padding:60px;text-align:center}
+@media(min-width:1500px){.worldart{height:152px}.sidebar{padding-top:40px}}
+@media(max-width:1150px){.shell{grid-template-columns:174px minmax(0,1fr)}.sidebar{padding:25px 13px}.topbar{padding:17px 25px}main{padding:24px}.hero{padding:25px}.worldgrid{gap:13px}.worldbody{padding:14px}.worldbody h3{font-size:14px}.overview{grid-template-columns:1.4fr 1fr}.hero h1{font-size:32px}.universe{transform:scale(.85)}}
+@media(max-width:850px){.shell{display:block}.sidebar{position:fixed;bottom:0;top:auto;width:100%;height:72px;z-index:5;padding:7px 9px;background:#ffffffed;backdrop-filter:blur(16px);border-top:1px solid var(--line);border-inline-end:0}.sidebar>.brand,.sidequote,.sidebar>.storage{display:none}.nav{display:grid;grid-template-columns:repeat(5,1fr);gap:3px}.nav button{display:grid;justify-items:center;gap:2px;padding:5px 0;min-height:54px;font-size:10px}.nav button svg{width:20px;height:20px}.topbar{padding:13px 22px}.topbrand{display:flex;gap:8px;font-size:20px;font-weight:bold}.topbar .date{display:none}.search{width:50%}.topbar .avatar{display:none}main{padding:23px 22px 95px}.hero{grid-template-columns:1.3fr .9fr;min-height:240px}.hero h1{font-size:30px}.universe{transform:scale(.75)}.overview{grid-template-columns:1.4fr 1fr}.dailywrap,.progresscols,.labgrid{grid-template-columns:1fr}.labcontrols{display:grid;grid-template-columns:1fr 1fr;gap:22px}.toast{bottom:85px}.calendar{grid-template-columns:repeat(14,1fr)}}
+@media(max-width:560px){body{font-size:13px}.topbar{padding:10px 16px;gap:12px}.topbrand{font-size:23px}.topbrand svg{width:25px}.topbar .row{gap:5px}.search{flex:1;width:auto}.search input{font-size:10px}.topbar .iconbtn{width:34px;height:34px}main{padding:19px 16px 96px}.hero{min-height:228px;padding:23px 21px;grid-template-columns:1fr}.hero h1{font-size:29px;max-width:230px}.hero p{font-size:11px;max-width:205px}.hero .btn{font-size:11px;padding:9px 14px}.universe{position:absolute;left:-49px;top:38px;transform:scale(.5);width:245px;height:225px;min-height:0;opacity:.85;pointer-events:none}.eyebrow{font-size:10px}.overview{grid-template-columns:1fr;gap:12px;margin-bottom:24px}.todaymini{padding:16px}.metrics{padding:13px 5px}.metrics b{font-size:22px}.worldgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.worldart{height:112px}.worldart>svg{width:100px;height:90px}.worldbody{padding:13px 12px}.worldbody h3{font-size:13px}.worldbody p{font-size:10px;min-height:34px;margin:4px 0 8px}.worldfooter{font-size:9px}.worldindex{right:10px;top:8px}.follow{width:29px;height:29px;top:8px;left:8px}.bridge{padding:18px;align-items:start;gap:10px}.bridge h3{font-size:13px}.bridge p{font-size:10px}.bridge .btn{font-size:10px;padding:8px 10px;flex-shrink:0}.sectionhead h2{font-size:19px}.sectionhead .muted{font-size:10px}.panel{padding:20px}.resourcegrid{grid-template-columns:1fr}.filters{gap:6px}.filters .chip{font-size:10px;padding:6px 12px}.filters select{font-size:11px;max-width:47%}.dialoghead{padding:18px;gap:10px}.dialoghead h2{font-size:18px}.dialoghead .articon{display:none}.dialoghead .iconbtn{width:34px;height:34px}.dialogbody{padding:18px}.dialogtabs{padding:0 12px;gap:5px}.dialogtabs button{font-size:12px;padding:13px 12px}dialog{max-height:93vh;width:96vw;border-radius:20px}.formgrid{grid-template-columns:1fr}.labstats strong{font-size:18px}.labcontrols{gap:16px}.balance strong{width:117px;font-size:11px}.pagehead{margin-bottom:20px}.pagehead h1{font-size:27px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="sidebar">
+<div class="brand row"><span class="brandmark" id="brandmark"></span><div><strong>مَدار</strong><small>مَعرفة تُعاش</small></div></div>
+<nav class="nav" aria-label="التنقل الرئيسي" id="nav"></nav>
+<div class="sidequote"><strong>قليلٌ يدوم، وأثرٌ ينمو.</strong>فكرة تفهمها. خُلُق تعيشه.<br>وشيء تصنعه بيدك.</div>
+<div class="storage">تقدّمك في هذا المتصفح.<br><button data-action="settings" style="padding:0;color:var(--green);text-decoration:underline">صدّره لتنتقل بين أجهزتك ↗</button></div>
+</aside>
+<div style="min-width:0">
+<header class="topbar"><div class="topbrand"><span id="mobilemark"></span>مَدار</div><label class="search"><span id="searchicon"></span><input id="search" type="search" placeholder="عالم، كتاب، فيديو… ماذا يثير فضولك؟" aria-label="ابحث في المصادر والعوالم"></label><div class="row"><span class="small muted date" id="date"></span><button class="iconbtn" data-action="settings" aria-label="تخصيص رحلتي" id="settingsicon"></button><button class="avatar" data-action="settings" id="avatar" aria-label="الملف الشخصي">ع</button></div></header>
+<main id="view" tabindex="-1"><div class="loading">مَدار — تُفتح عوالمك الآن…</div></main>
+</div></div>
+<dialog id="worldModal" aria-labelledby="worldTitle"></dialog>
+<dialog id="settingsModal" aria-labelledby="settingsTitle"></dialog>
+<dialog id="noteModal" aria-labelledby="noteTitle"></dialog>
+<input id="importFile" type="file" accept=".json,application/json" hidden>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+'use strict';
+const $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const paths={
+orbit:'<ellipse cx="12" cy="12" rx="10" ry="5" transform="rotate(-35 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="5" transform="rotate(35 12 12)"/><circle cx="12" cy="12" r="2"/>',
+home:'<rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/>',
+sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1 1m12 12 1 1M5 19l1-1M18 6l1-1"/>',
+flask:'<path d="M9 3h6m-5 0v7L4 20q0 1 2 1h12q2 0 2-1l-6-10V3M7 16h10"/><circle cx="12" cy="17" r="1"/>',
+book:'<path d="M12 5Q7 2 2 4v15q5-2 10 1 5-3 10-1V4q-5-2-10 1v15M5 7l4 1m6 0 4-1"/>',
+chart:'<path d="M3 3v18h18M7 15l4-5 4 3 5-8"/>',
+search:'<circle cx="10" cy="10" r="7"/><path d="m15 15 6 6"/>',
+settings:'<path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="3" fill="white"/><circle cx="15" cy="17" r="3" fill="white"/>',
+arrow:'<path d="M20 12H4m6-6-6 6 6 6"/>',
+external:'<path d="M14 3h7v7m0-7L10 14M10 4H4v16h16v-6"/>',
+star:'<path d="m12 3 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/>',
+bookmark:'<path d="M6 3h12v19l-6-4-6 4z"/>',
+check:'<path d="m5 12 4 4L20 5"/>',
+close:'<path d="m6 6 12 12M6 18 18 6"/>',
+play:'<path d="m9 5 11 7-11 7z"/>',
+heart:'<path d="M20 5q-5-5-8 1-3-6-8-1-5 5 8 15 13-10 8-15"/>',
+bolt:'<path d="m13 2-9 12h7l-1 8 10-13h-8z"/>',
+globe:'<circle cx="12" cy="12" r="10"/><ellipse cx="12" cy="12" rx="4" ry="10"/><path d="M2 12h20M4 6h16M4 18h16"/>',
+pen:'<path d="m15 3 6 6L8 22H2v-6zM12 6l6 6"/>',
+download:'<path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/>',
+plus:'<path d="M12 4v16M4 12h16"/>',
+trash:'<path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7"/>',
+flag:'<path d="M5 22V3q5-3 10 0l5-1v12l-5 1q-5-3-10 0"/>',
+math:'<path d="M4 19h16M5 14l3-8 4 11 7-14"/>'
+};
+function icon(n,s=20){return '<svg width="'+s+'" height="'+s+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(paths[n]||paths.orbit)+'</svg>'}
+const worlds=[
+{id:'quran',name:'القرآن والمعنى',sub:'تدبّرٌ يرافق يومك',cat:'إيمان',color:'#538b76',tint:'#eaf3e8',icon:'book',lab:null,
+steps:['افهم معاني الفاتحة، ثم دوّن أثرًا في صلاتك','تابع تفسير السور التي تقرؤها باستمرار','راجع فهمك مع معلّم، وشارك فائدة موثّقة'],
+project:'دفتر آية وأثر',tasks:['اختر آية واقرأ تفسيرها من المصدر','اكتب المعنى بأسلوبك، وميّزه عن نص التفسير','دوّن عملًا يناسب المعنى وراجع تطبيقه'],
+resources:[
+['q1','تفسير الفاتحة','فيديو','ar','مساعد المديفر · مركز تفسير','مقدّمات ومعانٍ لسورة ترافقك كل يوم.','https://tafsir.net/videos/12574'],
+['q2','غريب القرآن','درس','ar','عبد الرحمن الشهري · مركز تفسير','افهم المفردات قبل بناء التأملات.','https://tafsir.net/videos/7860'],
+['q3','منارة الأزهر','درس','ar','الأزهر الشريف','دروس مصوّرة في التفسير والعلوم الشرعية.','https://app.minaret.alazhar.edu.eg/emis/?page=arabiccourse&v=2']
+]},
+{id:'fiqh',name:'الفقه والسنّة',sub:'عبادةٌ بفهمٍ وبصيرة',cat:'إيمان',color:'#b88f51',tint:'#f5eddd',icon:'flag',lab:null,
+steps:['أتقن الطهارة والصلاة في مذهب تختاره','أكمل الصيام والزكاة وفق شرح متدرّج','ادرس آداب الخلاف مع معلّم مؤهّل'],
+project:'خريطة عبادتي',tasks:['اختر مسألة تحتاجها من باب الطهارة أو الصلاة','اكتب حكمها ومصدرها والمذهب المقصود','اعرض السؤال الذي أشكل عليك على معلّم'],
+resources:[
+['f1','رواق العلوم الشرعية','درس','ar','الأزهر الشريف','تعلّم الفقه في مسار مذهبي متدرّج.','https://azhar.eg/alruwaq/oloom.htm'],
+['f2','كتاب العلم من رياض الصالحين','فيديو','ar','سعيد الكملي · المجلس الأول','حديثٌ وأدبٌ يرافقان طلب العلم.','https://www.youtube.com/watch?v=1lFNfd6WuK0'],
+['f3','مجالس سعيد الكملي','فيديو','ar','القناة الرسمية','اختر سلسلة متصلة وتابع ترتيب مجالسها.','https://www.youtube.com/channel/UCASAOTD6fMPEg8jmO4nPblQ']
+]},
+{id:'character',name:'الأخلاق وبناء الذات',sub:'معرفةٌ تظهر في تعاملك',cat:'إنسان',color:'#b68a82',tint:'#f6eae6',icon:'heart',lab:null,
+steps:['استمع حتى ينتهي الآخر، وراقب أثر ذلك','تعلّم أن تقول: لا أعلم، ثم تحقّق','اختر خُلُقًا وراجع تطبيقه أسبوعيًا'],
+project:'سبعة أيام من حُسن المعاملة',tasks:['اختر سلوكًا واحدًا: إنصات أو وفاء أو رفق','طبّقه في موقف حقيقي ودوّن ما حدث','اطلب ملاحظة من شخص تثق برأيه'],
+resources:[
+['c1','آداب طالب العلم','فيديو','ar','سعيد الكملي · رياض الصالحين','ابدأ بما يضبط نيتك وسلوكك في التعلّم.','https://www.youtube.com/watch?v=1lFNfd6WuK0'],
+['c2','مكتبة هنداوي','كتاب','ar','مؤسسة هنداوي','اختر كتابًا في الأدب أو السيرة الذاتية، وأكمله.','https://www.hindawi.org/books/'],
+['c3','تأملات: لغةٌ ومعنى','فيديو','ar','محمد صالح · الجزيرة','توسّع في المعنى وتمرّن على دقّة التعبير.','https://www.youtube.com/watch?v=7bP--ej2FPU']
+]},
+{id:'math',name:'الرياضيات التطبيقية',sub:'من المعادلة إلى العالم',cat:'علم',color:'#8875c1',tint:'#efebf8',icon:'math',lab:'math',
+steps:['ارسم الدوال وافهم المتجهات والتحويلات','حلّ مسائل الجبر الخطي، ثم نمذج ظاهرة','اكتب خوارزمية تحسين واختبر حدودها'],
+project:'قرارٌ أفضل بالتحسين',tasks:['عرّف متغيرًا وتكلفةً تريد تصغيرها','جرّب الانحدار المتدرّج وسجّل الفرضيات','قارن نتيجتين واشرح لماذا اختلفتا'],
+resources:[
+['m1','جوهر الجبر الخطي','فيديو','en','3Blue1Brown','متجهات ومصفوفات وتحويلات تُرى.','https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab'],
+['m2','الجبر الخطي — 18.06','درس','en','Gilbert Strang · MIT OCW','محاضرات ومسائل لبناء أساس جامعي.','https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/'],
+['m3','Convex Optimization','كتاب','en','Boyd & Vandenberghe · Stanford','مرجع متقدّم بعد الجبر الخطي والتفاضل.','https://web.stanford.edu/~boyd/cvxbook/'],
+['m4','ارسم فكرتك','أداة','ar','Desmos','غيّر المعاملات وشاهد شكل الدالة.','https://www.desmos.com/calculator?lang=ar']
+]},
+{id:'ece',name:'الكهرباء والحاسوب',sub:'من الإشارة إلى الحوسبة',cat:'تقنية',color:'#528a9a',tint:'#e7f1f5',icon:'bolt',lab:'circuit',
+steps:['افهم الدوائر والجهد والتيار وحاكِ أمثلة','ابنِ أساسًا في البرمجة والمنطق الرقمي','اربط العتاد والبرمجيات بمشروع صغير'],
+project:'من دائرة إلى فكرة ذكية',tasks:['حاكِ شحن مكثف وفسّر الثابت الزمني','ابدأ مشروع بوابة منطقية في Nand2Tetris','ارسم نظامًا يجمع حساسًا ومعالجة ومخرجًا'],
+resources:[
+['e1','الدوائر والإلكترونيات — 6.002','درس','en','MIT OpenCourseWare','أساس جامعي في تحليل الدوائر.','https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/'],
+['e2','CS50x','درس','en','Harvard University','تفكير حاسوبي وبرمجة وحلّ مشكلات.','https://cs50.harvard.edu/x/2026/'],
+['e3','من NAND إلى Tetris','درس','en','Nand2Tetris','ابنِ الحاسوب عبر سلسلة مشاريع.','https://www.nand2tetris.org/course'],
+['e4','Lessons in Electric Circuits','كتاب','en','Tony Kuphaldt','كتاب مفتوح في الكهرباء والإلكترونيات.','https://www.ibiblio.org/kuphaldt/electricCircuits/'],
+['e5','مختبر دوائر افتراضي','أداة','en','Falstad','جرّب الدوائر وقارن بين توقّعك والمحاكاة.','https://www.falstad.com/circuit/']
+]},
+{id:'physics',name:'الفيزياء والكون',sub:'اسأل: لماذا يحدث هذا؟',cat:'علم',color:'#6584ab',tint:'#eaf0fa',icon:'orbit',lab:'physics',
+steps:['ابدأ بالقوى والطاقة والحركة','انتقل إلى الموجات والكهرباء والضوء','ضع توقّعًا ثم اختبره بقياس أو محاكاة'],
+project:'مختبر التوقّعات',tasks:['توقّع زاوية تعطي أكبر مدى في النموذج','غيّر الزاوية والسرعة كلًا على حدة','اشرح لماذا لا يطابق النموذج كل رمية حقيقية'],
+resources:[
+['p1','كيف تعمل الكهرباء فعلًا؟','فيديو','en','Veritasium','افحص تصوّرك لانتقال الطاقة في الدوائر.','https://www.veritasium.com/videos/2022/5/5/how-electricity-actually-works'],
+['p2','نافورة السلسلة','فيديو','en','Steve Mould','ظاهرة مرئية وتفسيرات واختبارات.','https://www.youtube.com/playlist?list=PLcqX4UMXNKEdNBKABT3ZF6Fvu5Jkq3OxB'],
+['p3','University Physics — Volume 1','كتاب','en','OpenStax · Rice University','مرجع جامعي مفتوح للميكانيكا والموجات.','https://openstax.org/details/books/university-physics-volume-1'],
+['p4','محاكاة تفاعلية بالعربية','أداة','ar','PhET · University of Colorado','تعلّم من التجربة وتغيير المتغيرات.','https://phet.colorado.edu/ar/']
+]},
+{id:'chemistry',name:'الكيمياء والحياة',sub:'المادة كما لم ترها من قبل',cat:'علم',color:'#b58a53',tint:'#f6efdf',icon:'flask',lab:'chemistry',
+steps:['افهم الذرّة والروابط وحالات المادّة','اربط التركيز والتفاعلات بأمثلة يومية','اقرأ النتائج مع ظروف التجربة وحدودها'],
+project:'كيمياء من حولي',tasks:['اختر ظاهرة مثل دموع البصل أو الذوبان','اربط شرحها بمفهوم كيميائي واضح','جرّب نموذج التخفيف واكتب ما الذي يبقى ثابتًا'],
+resources:[
+['ch1','لماذا يجعلنا البصل نبكي؟','فيديو','en','Reactions · ACS','تفسير كيميائي لظاهرة في المطبخ.','https://www.acs.org/pressroom/reactions/library/why-do-onions-make-you-cry.html'],
+['ch2','Chemistry 2e','كتاب','en','OpenStax · Rice University','كتاب مفتوح للمفاهيم والمسائل.','https://openstax.org/details/books/chemistry-2e'],
+['ch3','كيمياء الحياة اليومية','فيديو','en','American Chemical Society','اختر سؤالًا وتابع تفسيره العلمي.','https://www.acs.org/pressroom/reactions.html'],
+['ch4','محاكاة PhET','أداة','ar','University of Colorado','استكشف التراكيز والجزيئات افتراضيًا.','https://phet.colorado.edu/ar/']
+]},
+{id:'engineering',name:'الهندسة والابتكار',sub:'افهم. فكّك الفكرة. اصنع.',cat:'تقنية',color:'#b17b59',tint:'#f5e9de',icon:'settings',lab:'circuit',
+steps:['افهم كيف تعمل آلتان وارسم الأجزاء','اختر مشكلة يومية وحدّد قيدًا قابلًا للقياس','ابنِ نموذجًا افتراضيًا وقارن البدائل'],
+project:'دفتر مخترع',tasks:['صف مشكلة واحدة دون اقتراح الحل أولًا','ارسم ثلاثة حلول ووازن الكلفة والتعقيد','اختبر نموذجًا بسيطًا واكتب ما ستعدّله'],
+resources:[
+['en1','كيف تعمل الآلات؟','فيديو','ar','JAES Company عربي · LearnEngineeringAR','ابدأ بمحرك البنزين مقابل الديزل.','https://www.youtube.com/@LearnEngineeringAR'],
+['en2','المضخّات الحرارية','درس','en','The Engineering Mindset','افهم التدفئة والتبريد وانتقال الحرارة.','https://theengineeringmindset.com/category/building-services/hvac/heat-pumps/'],
+['en3','حاكِ قبل أن تصنع','أداة','en','Falstad','قارن أفكار الدوائر داخل المحاكاة.','https://www.falstad.com/circuit/']
+]},
+{id:'travel',name:'الثقافة والاستكشاف',sub:'عقلٌ واسع، وعين مسافر',cat:'إنسان',color:'#728c65',tint:'#edf1e4',icon:'globe',lab:null,
+steps:['اكتشف تاريخ مكان ومعنى معلم فيه','خطّط لزيارة محلية أو جولة افتراضية','اكتب حكاية المكان مع مصادر وملاحظاتك'],
+project:'جولة بعينٍ جديدة',tasks:['اختر مكانًا وحدّد سؤالًا عن تاريخه أو عمارته','رتّب ثلاث محطات وتحقق من المواعيد والتكلفة','بعد الجولة: اكتب ملاحظة وسؤالًا وقصة'],
+resources:[
+['t1','إسطنبول التاريخية','درس','mix','مركز التراث العالمي · UNESCO','تاريخٌ وعمارة وخريطة لموقع تراث عالمي.','https://whc.unesco.org/en/list/356'],
+['t2','تجوّل في اللوفر من بيتك','أداة','en','Musée du Louvre','اختر جولة افتراضية وتأمّل ثلاث قطع.','https://www.louvre.fr/en/online-tours'],
+['t3','مياه عذبة من الضباب','وثائقي','ar','DW Documentary','تقنية وبيئة وحياة الناس في أماكن مختلفة.','https://www.youtube.com/watch?v=rzr6V06pYHc'],
+['t4','تأملات: اللغة والأدب','فيديو','ar','محمد صالح · الجزيرة','رحلة في الكلمات والأمثال والمعاني.','https://www.youtube.com/watch?v=7bP--ej2FPU']
+]}
+];
+const byId=id=>worlds.find(w=>w.id===id), KEY='madar.journey.v1', today=()=>dayKey(0);
+function dayKey(offset){const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Jerusalem',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());const get=t=>parts.find(p=>p.type===t).value;const d=new Date(Date.UTC(+get('year'),+get('month')-1,+get('day')+offset,12));return d.toISOString().slice(0,10)}
+function fresh(){return{version:1,name:'عدي',minutes:30,madhhab:'شافعي',following:['quran','character','math','ece','travel'],saved:[],logs:[],notes:[],custom:[],plan:null}}
+function safeURL(u){try{const a=new URL(u);return ['https:','http:'].includes(a.protocol)?a.href:''}catch{return''}}
+function clean(raw){
+ if(!raw||raw.version!==1)throw Error('نسخة غير مدعومة');
+ const base=fresh(),validDate=s=>/^\d{4}-\d{2}-\d{2}$/.test(s||''),s=x=>typeof x==='string'?x:'';
+ base.name=s(raw.name).trim().slice(0,35)||'مسافر معرفة';base.minutes=[15,30,60].includes(raw.minutes)?raw.minutes:30;
+ base.madhhab=['شافعي','حنفي','مالكي','حنبلي'].includes(raw.madhhab)?raw.madhhab:'شافعي';
+ base.following=Array.isArray(raw.following)?[...new Set(raw.following.filter(x=>byId(x)))]:base.following;
+ base.saved=Array.isArray(raw.saved)?raw.saved.filter(x=>typeof x==='string').slice(0,1000):[];
+ base.logs=Array.isArray(raw.logs)?raw.logs.filter(x=>x&&s(x.id)&&validDate(x.day)&&byId(x.world)).slice(-10000).map(x=>({id:s(x.id).slice(0,120),world:x.world,day:x.day,title:s(x.title).slice(0,220)})):[];
+ base.notes=Array.isArray(raw.notes)?raw.notes.filter(x=>x&&s(x.text)&&validDate(x.day)).slice(-2000).map(x=>({id:s(x.id).slice(0,100),world:byId(x.world)?x.world:'character',day:x.day,text:s(x.text).slice(0,4000)})):[];
+ base.custom=Array.isArray(raw.custom)?raw.custom.filter(x=>x&&byId(x.world)&&safeURL(x.url)&&s(x.title)).slice(0,300).map((x,i)=>({id:s(x.id).replace(/[^a-z0-9_-]/gi,'').slice(0,80)||'custom'+i,world:x.world,title:s(x.title).slice(0,100),url:safeURL(x.url),type:['فيديو','كتاب','درس','أداة','وثائقي'].includes(x.type)?x.type:'درس',lang:['ar','en','mix'].includes(x.lang)?x.lang:'ar',author:'إضافتي',desc:'مصدر أضفته إلى رحلتك.'})):[];
+ if(raw.plan&&raw.plan.day===today()&&byId(raw.plan.world)&&Number.isInteger(raw.plan.r)&&raw.plan.r>=0&&raw.plan.r<byId(raw.plan.world).resources.length)base.plan={day:today(),world:raw.plan.world,r:raw.plan.r};
+ return base;
+}
+let state=fresh(),persistent=true;
+try{const raw=localStorage.getItem(KEY);if(raw)state=clean(JSON.parse(raw))}catch{persistent=false}
+let view='home',category='الكل',worldTab='discover',activeWorld=null,libMode='all',libType='all',libLang='all',libWorld='all',query='',adding=false,labMode='math',horizon='90',noteLimit=30,pendingImport=null,toastTimer,returnFocus=null;
+const labValues={math:{x:-4,rate:.2},circuit:{r:10,c:100},physics:{v:20,a:45},chemistry:{water:100}};
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));persistent=true}catch{persistent=false;toast('الحفظ غير متاح هنا؛ صدّر تقدّمك للاحتفاظ به.')} }
+function toast(s){$('#toast').textContent=s;$('#toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('show'),3000)}
+function resources(){return worlds.flatMap(w=>w.resources.map(r=>({id:r[0],title:r[1],type:r[2],lang:r[3],author:r[4],desc:r[5],url:r[6],world:w.id}))).concat(state.custom)}
+function done(id){return state.logs.some(x=>x.id===id)}
+function toggle(id,world,title){const i=state.logs.findIndex(x=>x.id===id);if(i>=0)state.logs.splice(i,1);else{state.logs.push({id,world,title,day:today()});toast('خطوة جديدة في رحلتك ✓')}save()}
+function worldProgress(w){const ids=[...w.resources.map(r=>r[0]),...w.steps.map((_,i)=>'step:'+w.id+':'+i),...w.tasks.map((_,i)=>'project:'+w.id+':'+i)];const n=ids.filter(done).length;return{n,total:ids.length,p:Math.round(n/ids.length*100)}}
+function activeDays(){return new Set(state.logs.map(x=>x.day))}
+function streak(){const ds=activeDays();let n=0,offset=ds.has(today())?0:-1;while(ds.has(dayKey(offset--)))n++;return n}
+function art(w){const marks={
+quran:'<path d="M38 70Q70 51 98 67v66q-30-18-60 2zM98 67q29-16 60 3v65q-32-20-60-2" fill="white"/><path d="M50 83q20-9 36-4m-36 19q20-9 36-4m24-15q19-4 34 4m-34 11q19-4 34 4M98 67v66"/><path d="m98 25 3 8 8 3-8 3-3 8-3-8-8-3 8-3z" fill="currentColor" stroke="none"/>',
+fiqh:'<path d="M53 126V77h92v49M73 77q24-46 49 0M50 126h100M39 126V52m-5 0 5-13 5 13m107 74V52m-5 0 5-13 5 13M87 126v-20q10-17 20 0v20"/><path d="M94 34a10 10 0 1 0 11-14 12 12 0 0 1-11 14" fill="currentColor" stroke="none"/>',
+character:'<path d="M97 113C23 75 64 28 97 65c35-37 75 11 0 48z" fill="white"/><path d="m57 126 20 10 35-2 35-25q-7-11-16-3l-20 13H91q-15-21-30-13l-19 10M65 137l-24-26m93-67 7-7m-3 25 12-1M53 55l-9-8"/>',
+math:'<path d="M39 133V35m0 98h124" opacity=".4"/><path d="M46 56q52 130 111-17" stroke-width="3"/><path d="m81 107 35-38m-12 3 12-3-3 12" stroke-width="2"/><circle cx="82" cy="106" r="6" fill="white"/><circle cx="116" cy="69" r="5" fill="currentColor"/><path d="M51 42h27m-14-13v26" opacity=".4"/>',
+ece:'<rect x="67" y="51" width="65" height="65" rx="13" fill="white"/><rect x="82" y="66" width="35" height="35" rx="6"/><path d="M81 38v13m19-13v13m19-13v13M81 116v14m19-14v14m19-14v14M54 66h13M54 84h13m-13 18h13m65-36h15m-15 18h15m-15 18h15M33 84h10m113 0h12M100 19v9"/><path d="m100 72-10 15h10l-1 9 11-15h-10z" fill="currentColor" stroke="none"/>',
+physics:'<ellipse cx="100" cy="85" rx="67" ry="24" transform="rotate(-30 100 85)"/><ellipse cx="100" cy="85" rx="67" ry="24" transform="rotate(32 100 85)"/><ellipse cx="100" cy="85" rx="24" ry="67"/><circle cx="100" cy="85" r="16" fill="white"/><circle cx="42" cy="54" r="6" fill="currentColor"/><circle cx="126" cy="137" r="5" fill="currentColor"/><circle cx="146" cy="54" r="4" fill="currentColor"/>',
+chemistry:'<path d="M75 31h49m-39 0v48l-32 51q-5 12 9 12h78q13 0 7-12l-33-51V31" fill="white"/><path d="M68 108q16-10 32 0t33 0M88 43h23"/><circle cx="85" cy="122" r="5"/><circle cx="110" cy="112" r="3"/><circle cx="103" cy="88" r="4"/><circle cx="145" cy="44" r="6" opacity=".5"/><circle cx="55" cy="78" r="4" opacity=".5"/>',
+engineering:'<path d="m100 33 12 16 20-2 3 21 17 11-10 19 4 20-22 6-9 17-19-11-21 3-5-22-16-10 10-19-2-20 21-4z" fill="white"/><circle cx="101" cy="86" r="24"/><path d="M93 75q16-6 16 8 0 6-6 10v7h-9v-7q-13-10-1-18m1 31h9M43 43l8 7m95 80 8 7"/>',
+travel:'<circle cx="100" cy="82" r="54" fill="white"/><ellipse cx="100" cy="82" rx="23" ry="54"/><path d="M46 82h108M55 56h90M55 108h90"/><path d="m143 35 18-8-6 18-12-10z" fill="currentColor"/><path d="m157 31-24 23M63 137l-10 10" stroke-width="3"/>'
+};return '<svg width="147" height="130" viewBox="0 0 200 165" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+marks[w.id]+'</svg>'}
+const navs=[['home','home','عوالمك'],['today','sun','يومك'],['lab','flask','المختبر'],['library','book','مكتبتي'],['progress','chart','أثرك']];
+function go(v){view=v;render();window.scrollTo({top:0,behavior:'smooth'})}
+function render(){
+ $('#nav').innerHTML=navs.map(([v,i,t])=>`<button data-action="nav" data-v="${v}" class="${view===v?'active':''}" ${view===v?'aria-current="page"':''}>${icon(i)}<span>${t}</span></button>`).join('');
+ $('#avatar').textContent=state.name.slice(0,1);$('#view').innerHTML=({home:renderHome,today:renderToday,library:renderLibrary,lab:renderLab,progress:renderProgress}[view]||renderHome)();
+ if(view==='lab')drawLab();
+}
+function ensurePlan(){if(!state.plan||state.plan.day!==today()){const pool=worlds.filter(w=>state.following.includes(w.id));const options=pool.length?pool:worlds;const n=Math.floor(Date.parse(today())/86400000);const w=options[((n%options.length)+options.length)%options.length];let r=w.resources.findIndex(r=>!done(r[0]));if(r<0)r=n%w.resources.length;state.plan={day:today(),world:w.id,r};save()}return state.plan}
+function dailyItems(){
+ const p=ensurePlan(),w=byId(p.world),r=w.resources[p.r],d=state.minutes===15?[8,4,3]:state.minutes===60?[30,20,10]:[15,10,5];
+ return [{id:'daily:'+today()+':learn',world:w.id,title:r[1],desc:r[4],mins:d[0],kind:'تعلّم',resource:r[0]},
+ {id:'daily:'+today()+':apply',world:w.id,title:w.project,desc:w.tasks[0],mins:d[1],kind:'طبّق',project:true},
+ {id:'daily:'+today()+':reflect',world:'character',title:'فكرة تتحوّل إلى أثر',desc:'اكتب ما فهمته، وخطوة ستعيشها غدًا.',mins:d[2],kind:'تأمّل',note:true}];
+}
+function renderHome(){
+ const items=dailyItems(),finished=items.filter(x=>done(x.id)).length,ds=activeDays();
+ let list=worlds.filter(w=>(category==='الكل'||category==='المفضّلة'&&state.following.includes(w.id)||w.cat===category));
+ return `<section class="hero"><div class="herotext"><div class="eyebrow"><span class="dot"></span>رحلتك إلى نسخة أوسع منك</div><h1>كل يوم، فكرة.<br>ومع الأيام، <em>أثر.</em></h1><p>تعلّم بفضول. عِش بقيم. واصنع ما تتخيّل.</p><div class="row"><button class="btn primary" data-action="nav" data-v="today">${icon('play',16)} ابدأ رحلتك اليوم</button><button class="btn" data-action="settings" style="font-size:11px">على طريقتي ${icon('settings',15)}</button></div></div><div class="universe" aria-hidden="true"><div class="orbit"></div><div class="orbit two"></div><div class="core">${icon('orbit',63)}</div><div class="sat a">${icon('math',25)}</div><div class="sat b">${icon('bolt',24)}</div><div class="sat c">${icon('book',24)}</div><div class="sat d">${icon('globe',24)}</div><div class="stars">✦ · ✧ · ✦</div></div></section>
+ <div class="overview"><button class="todaymini row between" data-action="nav" data-v="today" style="text-align:start"><div class="row"><div class="ring" style="--percent:${finished/3*100}%"><span>${finished}/3</span></div><div><h3>خطوتك اليوم، ${esc(state.name)}</h3><small class="muted">${state.minutes} دقيقة · تعلّم، تطبيق، تأمّل</small></div></div>${icon('arrow')}</button><div class="metrics"><div><b>${ds.size}</b><small>أيام فيها أثر</small></div><div><b>${streak()}</b><small>أيام متصلة</small></div><div><b>${state.notes.length}</b><small>أفكار حفظتها</small></div></div></div>
+ <div class="sectionhead"><div><h2>عالَمٌ يفتح عوالم</h2><span class="muted">اختر باب فضولك، وابدأ بخطوة.</span></div><span class="pill">${worlds.length} عوالم ${icon('orbit',14)}</span></div>
+ <div class="chips" style="margin-bottom:18px">${['الكل','المفضّلة','إيمان','علم','تقنية','إنسان'].map(c=>`<button data-action="category" data-id="${c}" class="chip ${category===c?'active':''}">${c==='المفضّلة'?icon('star',13):''}${c}</button>`).join('')}</div>
+ <div class="worldgrid">${list.map(w=>{const p=worldProgress(w);return `<article class="worldcard" style="--color:${w.color};--tint:${w.tint}"><button class="worldhit" data-action="world" data-id="${w.id}" aria-label="استكشف ${w.name}"><div class="worldart"><span class="worldindex">0${worlds.indexOf(w)+1} / مَدار</span>${art(w)}</div><div class="worldbody"><h3>${w.name}</h3><p>${w.sub}</p><div class="worldfooter"><span>${w.resources.length} مصادر · مشروع تطبيقي</span><span>${p.p}%</span></div><div class="line"><i style="width:${p.p}%;background:${w.color}"></i></div></div></button><button class="follow ${state.following.includes(w.id)?'on':''}" data-action="follow" data-id="${w.id}" aria-label="تفضيل ${w.name}" aria-pressed="${state.following.includes(w.id)}">${icon('star',15)}</button></article>`}).join('')||'<div class="empty">اختر النجمة على العوالم التي تحبها، لتظهر هنا.</div>'}</div>
+ <div class="bridge"><div><h3>${icon('flask',20)} الفضول يصبح أوضح حين تجرّب.</h3><p>حرّك القيم. توقّع النتيجة. ثم افهم ما تغيّر.</p></div><div class="row wrap"><button class="btn outline" data-action="nav" data-v="lab">إلى المختبر ${icon('arrow',16)}</button><button class="btn" data-action="bridge" style="font-size:11px">اربط عالمين ✦</button></div></div>
+ <div class="footer">مَدار · الفهم والعمل يصنعان الأثر. ${persistent?'محفوظ على هذا المتصفح.':'الحفظ الدائم غير متاح؛ استخدم تصدير التقدّم.'}</div>`;
+}
+function resourceCard(r){
+ const w=byId(r.world),is=done(r.id),saved=state.saved.includes(r.id),typ={فيديو:'play',كتاب:'book',درس:'pen',أداة:'flask',وثائقي:'globe'}[r.type];
+ return `<article class="resource ${is?'complete':''}" style="--color:${w.color};--tint:${w.tint}"><div class="row between"><div class="row"><span class="rtype">${icon(typ,21)}</span><span class="pill">${r.type}</span><span class="small muted">${{ar:'عربي',en:'EN',mix:'متعدد'}[r.lang]}</span></div><button class="iconbtn bookmark ${saved?'on':''}" data-action="bookmark" data-id="${esc(r.id)}" aria-label="حفظ ${esc(r.title)}" aria-pressed="${saved}">${icon('bookmark',16)}</button></div><div><h3>${esc(r.title)}</h3><small class="muted">${esc(r.author)}</small></div><p>${esc(r.desc)}</p><div class="actions"><a class="btn soft grow" href="${esc(safeURL(r.url))}" target="_blank" rel="noopener noreferrer">افتح المصدر ${icon('external',14)}</a><button class="iconbtn" data-action="resourceDone" data-id="${esc(r.id)}" aria-label="${is?'إلغاء الإنجاز':'أنجزت جلسة من'} ${esc(r.title)}" aria-pressed="${is}" style="${is?'background:#e5f1e9;color:#24685b':''}">${icon('check',18)}</button></div></article>`;
+}
+function renderToday(){
+ const items=dailyItems(),n=items.filter(i=>done(i.id)).length,p=ensurePlan(),w=byId(p.world);
+ return `<div class="pagehead row between"><div><div class="label">خطوة تستحقّها</div><h1>هذه ليلتك.</h1><p>جلسة صغيرة. وفكرة تبقى معك.</p></div><div class="ring" style="--percent:${n/3*100}%"><span>${n}/3</span></div></div>
+ <div class="dailywrap"><section class="panel"><div class="row between wrap"><h3>${icon(w.icon)} مدار اليوم: ${w.name}</h3><div class="chips">${[15,30,60].map(m=>`<button class="chip ${state.minutes===m?'active':''}" data-action="minutes" data-n="${m}" aria-pressed="${state.minutes===m}">${m} د</button>`).join('')}</div></div><p class="hint">الأوقات تقسيم مقترح للجلسة؛ يمكن متابعة جزء من المصدر.</p>
+ ${items.map((t,i)=>`<article class="session"><button class="stepnum" data-action="dailyDone" data-i="${i}" aria-label="تسجيل إنجاز ${t.kind}" aria-pressed="${done(t.id)}" style="${done(t.id)?'background:#24685b;color:white':''}">${done(t.id)?icon('check',18):'0'+(i+1)}</button><div class="grow"><div class="row between"><span class="pill">${t.kind}</span><small class="muted">${t.mins} دقائق</small></div><h3 style="margin-top:8px">${esc(t.title)}</h3><p>${esc(t.desc)}</p><div class="row wrap">${t.resource?`<a class="btn soft" href="${esc(resources().find(r=>r.id===t.resource).url)}" target="_blank" rel="noopener noreferrer">ابدأ التعلّم ${icon('external',14)}</a>`:t.project?`<button class="btn soft" data-action="world" data-id="${t.world}" data-tab="practice">افتح المشروع ${icon('arrow',14)}</button>`:'<button class="btn soft" data-action="focusJournal">دوّن الفكرة '+icon('pen',14)+'</button>'}<button class="btn ${done(t.id)?'soft':'outline'}" data-action="dailyDone" data-i="${i}">${done(t.id)?'أنجزتها ✓':'أنجزت الخطوة'}</button></div></div></article>`).join('')}
+ ${n===3?'<div class="notice" style="margin-top:16px;margin-bottom:0">أتممت جلسة اليوم. دع الفكرة تأخذ مكانها في حياتك ✦</div>':''}</section>
+ <aside class="stack" style="align-content:start"><section class="panel journal"><span class="pill">${icon('pen',14)} من المعرفة إلى الأثر</span><h3>ما الذي سيبقى معك؟</h3><p>فهمته… سأطبّقه… وما زلت أسأل…</p><textarea id="dailyJournal" maxlength="4000" placeholder="فكرتك، بكلماتك." aria-label="فكرة اليوم"></textarea><button class="btn primary" data-action="saveJournal">احفظ فكرتي ${icon('plus',15)}</button><p class="hint">ستجدها لاحقًا في «أثرك».</p></section><section class="panel"><h3>رحلتك لا تتأخّر.</h3><p class="hint">إذا فاتتك ليلة، عد بخطوة صغيرة.<br>الاستمرار يتّسع للراحة.</p><button class="btn" data-action="settings" style="padding-right:0;font-size:12px;color:var(--green)">غيّر عوالم يومك ${icon('settings',15)}</button></section></aside></div>`;
+}
+function renderLibrary(){
+ let rs=resources().filter(r=>(libMode!=='saved'||state.saved.includes(r.id))&&(libMode!=='done'||done(r.id))&&(libType==='all'||r.type===libType)&&(libLang==='all'||r.lang===libLang||r.lang==='mix')&&(libWorld==='all'||r.world===libWorld));
+ if(query){const q=query.toLocaleLowerCase();rs=rs.filter(r=>(r.title+' '+r.desc+' '+r.author+' '+byId(r.world).name).toLocaleLowerCase().includes(q))}
+ return `<div class="pagehead row between wrap"><div><div class="label">ما تقرأه، ما تشاهده، ما تصنعه</div><h1>مكتبتك الحيّة.</h1><p>مصادر أصلية مختارة، ومساحة لاختياراتك.</p></div><button class="btn primary" data-action="addToggle">${icon('plus',17)} أضف مصدرًا</button></div>
+ <div class="filters">${[['all','الكل'],['saved','المحفوظ'],['done','أنجزت منه']].map(([v,t])=>`<button class="chip ${libMode===v?'active':''}" data-action="libMode" data-v="${v}">${t}</button>`).join('')}<select class="select" id="filterWorld" aria-label="تصفية حسب العالم"><option value="all">كل العوالم</option>${worlds.map(w=>`<option value="${w.id}" ${libWorld===w.id?'selected':''}>${w.name}</option>`).join('')}</select><select class="select" id="filterType" aria-label="نوع المحتوى"><option value="all">كل الأنواع</option>${['فيديو','كتاب','درس','أداة','وثائقي'].map(t=>`<option ${libType===t?'selected':''}>${t}</option>`).join('')}</select><select class="select" id="filterLang" aria-label="لغة المحتوى">${[['all','كل اللغات'],['ar','عربي'],['en','English']].map(([v,t])=>`<option value="${v}" ${libLang===v?'selected':''}>${t}</option>`).join('')}</select></div>
+ ${adding?`<form id="addSource" class="addform"><h3>مصدر يستحق مكانًا</h3><div class="formgrid"><label class="formfield">الاسم<input name="title" required maxlength="100" placeholder="عنوان الفيديو أو الكتاب"></label><label class="formfield">الرابط<input name="url" type="url" dir="ltr" required placeholder="https://…"></label><label class="formfield">العالم<select name="world">${worlds.map(w=>`<option value="${w.id}">${w.name}</option>`).join('')}</select></label><div class="formgrid" style="margin:0"><label class="formfield">النوع<select name="type"><option>فيديو</option><option>كتاب</option><option>درس</option><option>أداة</option><option>وثائقي</option></select></label><label class="formfield">اللغة<select name="lang"><option value="ar">عربي</option><option value="en">English</option></select></label></div></div><button class="btn primary" type="submit">أضف إلى مكتبتي</button> <span id="sourceError" class="formerror"></span></form>`:''}
+ <div class="row between" style="margin-bottom:14px"><small class="muted">${rs.length} مصدرًا ${query?'· نتائج «'+esc(query)+'»':''}</small><small class="muted">✓ = سجّلت جلسة من المصدر</small></div>
+ <div class="resourcegrid">${rs.map(resourceCard).join('')||'<div class="empty" style="grid-column:1/-1">'+icon('book',30)+'لا مصادر مطابقة. غيّر التصفية أو أضف مصدرًا.</div>'}</div>
+ <div class="footer">الروابط تفتح المصدر الأصلي. لغة الترجمة وإتاحة المحتوى تتبعان المصدر. · اختيارات مَدار: أكتوبر 2026</div>`;
+}
+function openWorld(id,tab='discover'){
+ activeWorld=id;worldTab=tab;const w=byId(id),d=$('#worldModal');if(!w)return;
+ const p=worldProgress(w);const rs=resources().filter(r=>r.world===id);
+ d.innerHTML=`<div class="dialoghead" style="--tint:${w.tint};color:${w.color}"><span class="articon">${icon(w.icon,34)}</span><div class="grow"><h2 id="worldTitle">${w.name}</h2><p>${w.sub}</p></div><button class="iconbtn" data-action="follow" data-id="${id}" aria-label="تفضيل العالم" aria-pressed="${state.following.includes(id)}" style="${state.following.includes(id)?'color:#b58b4b':''}">${icon('star',17)}</button><button class="iconbtn" data-action="closeWorld" aria-label="إغلاق">${icon('close',19)}</button></div>
+ <div class="dialogtabs" role="tablist" aria-label="محتويات العالم">${[['discover','اكتشف'],['path','مساري'],['practice','جرّب واصنع']].map(([t,l])=>`<button role="tab" class="${tab===t?'active':''}" aria-selected="${tab===t}" data-action="worldTab" data-tab="${t}">${l}</button>`).join('')}</div><div class="dialogbody" role="tabpanel">
+ ${tab==='discover'?`${id==='fiqh'?'<div class="notice">تأسيسك الحالي: المذهب '+esc(state.madhhab)+'. المصادر تدعم التعلم المذهبي؛ الموقع لا يصدر فتاوى. اختر شرحًا متصلًا مع معلّم.</div>':''}<div class="resourcegrid">${rs.map(resourceCard).join('')}</div>`:tab==='path'?`<div class="row between"><h3>فهمٌ يتدرّج إلى عمل</h3><span class="pill">${p.n}/${p.total} خطوات موثّقة</span></div><div class="line" style="margin:14px 0"><i style="width:${p.p}%"></i></div>${w.steps.map((s,i)=>{const key='step:'+id+':'+i;return `<div class="stepitem"><button class="check ${done(key)?'done':''}" data-action="step" data-i="${i}" aria-label="تسجيل مرحلة ${i+1}" aria-pressed="${done(key)}">${done(key)?icon('check',16):''}</button><div><span class="pill">${['١ · أُؤسّس','٢ · أُعمّق','٣ · أُنتج'][i]}</span><h3 style="font-size:14px">${s}</h3><p>${['افهم الفكرة واشرحها من ذاكرتك.','اربط المصدر بمسألة أو موقف.','اترك نتيجة تستطيع مراجعتها.'][i]}</p></div></div>`}).join('')}<p class="hint">أكمل المرحلتين الأولى والثانية قبل مراجع التعمّق. التقدّم توثيقك الشخصي، وليس شهادة إتقان.</p><button class="btn soft" style="margin-top:16px" data-action="worldTab" data-tab="practice">انتقل إلى مشروعك ${icon('arrow',15)}</button>`:
+ `<div class="row between wrap"><div><span class="label">معرفةٌ تخرج من الشاشة</span><h3 style="margin-top:6px">${w.project}</h3></div>${w.lab?`<button class="btn primary" data-action="openLab" data-mode="${w.lab}">${icon('flask',16)} مختبر تفاعلي</button>`:''}</div><div class="project"><h3>ثلاث خطوات، ونتيجة ملموسة</h3>${w.tasks.map((s,i)=>`<label><input type="checkbox" data-project="${i}" ${done('project:'+id+':'+i)?'checked':''}><span>${s}</span></label>`).join('')}</div>
+ ${id==='travel'?'<div class="notice" style="margin-top:16px">جولتك قد تبدأ في مدينتك، أو داخل متحف افتراضي. تحقّق من المواعيد والأسعار قبل أي زيارة.</div>':''}
+ <div class="project"><h3>احفظ النتيجة أو السؤال القادم</h3><textarea id="projectNote" maxlength="4000" placeholder="رسمٌ وصفتَه، تجربة أجريتها، أو أثر لاحظته…" style="width:100%;border:1px solid var(--line);border-radius:11px;padding:12px;margin:12px 0"></textarea><button class="btn soft" data-action="saveProject">${icon('pen',15)} أضف إلى أثري</button></div>`}</div>`;
+ if(!d.open)d.showModal();
+}
+function renderProgress(){
+ const ds=activeDays(),steps=state.logs.length,noteCount=state.notes.length;const vision={
+ '7':[['تذوّق','جرّب عالمين. اختر المصدر الذي ترغب بإكماله.'],['ثبّت','ثلاث جلسات صغيرة، وفكرة واحدة مكتوبة.'],['طبّق','سلوك أو تجربة تستطيع وصف نتيجتها.']],
+ '90':[['شهر التأسيس','أكمل مدخلًا في عالمين تفضّلهما.'],['شهر الروابط','اربط فكرة علمية بمسألة ومصدر ديني بسلوك.'],['شهر الأثر','أكمل مشروعًا صغيرًا، وراجعه مع من يفهم مجاله.']],
+ '365':[['أساس متين','أكمل سلاسل وكتبًا مناسبة لمستواك.'],['موسم صناعة','ابنِ مشاريع ودوّن محاولاتك وتعديلاتك.'],['موسم مشاركة','اشرح ما تعلّمت، واستقبل النقد وصحّح.']]
+ };
+ return `<div class="pagehead row between wrap"><div><div class="label">رحلة لا تُقاس بالألقاب</div><h1>ما تركته فيك الأيام.</h1><p>أيام تعلّمت فيها، وأفكار عدت بها، وخطوات سجّلتها.</p></div><button class="btn outline" data-action="export">${icon('download',16)} صدّر رحلتي</button></div>
+ <div class="progresscols"><div class="stack" style="align-content:start"><section class="panel"><div class="row between"><h3>حديقتك خلال ٨ أسابيع</h3><span class="pill">${ds.size} يومًا نشطًا</span></div><div class="calendar">${Array.from({length:56},(_,i)=>{const d=dayKey(i-55);return `<div class="daycell ${ds.has(d)?'active':''} ${d===today()?'today':''}" title="${d}: ${state.logs.filter(x=>x.day===d).length} خطوات" aria-label="${d}: ${ds.has(d)?'فيه نشاط':'بلا نشاط مسجّل'}"></div>`}).join('')}</div><small class="muted">كل مربع يوم · يزهر حين تسجّل نشاطًا · اليوم بإطار ذهبي</small><div class="metrics" style="margin-top:20px;border:0;background:#f7f9f6"><div><b>${steps}</b><small>خطوات موثّقة</small></div><div><b>${streak()}</b><small>أيام متصلة</small></div><div><b>${noteCount}</b><small>أفكار محفوظة</small></div></div></section>
+ <section class="panel"><h3>توازن عوالمك</h3><p class="hint">مصادر وخطوات ومهام أكّدت إنجازها.</p>${worlds.map(w=>{const p=worldProgress(w);return `<div class="balance"><strong>${w.name}</strong><div class="line"><i style="width:${p.p}%;background:${w.color}"></i></div><small>${p.p}%</small></div>`}).join('')}</section></div>
+ <div class="stack" style="align-content:start"><section class="panel"><h3>أفقك القادم</h3><div class="chips" style="margin-top:13px">${[['7','أسبوع'],['90','٩٠ يومًا'],['365','عام وأكثر']].map(([v,l])=>`<button class="chip ${horizon===v?'active':''}" data-action="horizon" data-v="${v}">${l}</button>`).join('')}</div><div class="timeline">${vision[horizon].map(([t,p])=>`<div><strong>${t}</strong><p>${p}</p></div>`).join('')}</div><small class="muted">أفق مقترح تعدّله حسب وقتك، وليس وعدًا بمستوى علمي.</small></section>
+ <section class="panel"><div class="row between"><h3>دفتر الأثر</h3><button class="iconbtn" data-action="newNote" aria-label="إضافة فكرة">${icon('plus',18)}</button></div>${state.notes.length?state.notes.slice().reverse().slice(0,noteLimit).map(n=>`<div class="note">${esc(n.text)}<button data-action="deleteNote" data-id="${esc(n.id)}" aria-label="حذف الفكرة">${icon('trash',14)}</button><span class="muted">${esc(n.day)} · ${byId(n.world)?.name||'فكرتي'}</span></div>`).join(''):'<div class="empty" style="margin-top:16px">'+icon('pen',27)+'أول فكرة تنتظرك.<br>سجّل ما فهمته وما ستفعله به.</div>'}${state.notes.length>noteLimit?'<button class="btn soft" data-action="moreNotes" style="width:100%;margin-top:16px">أفكار أقدم</button>':''}</section></div></div>`;
+}
+const labInfo={
+ math:{title:'كيف تجد الخوارزمية أقلّ تكلفة؟',sub:'غيّر نقطة البداية وحجم الخطوة. راقب ١٢ خطوة نحو الحدّ الأدنى.',question:'ماذا يتغيّر عندما تكبر الخطوة؟ جرّب قيمة أكبر من 0.5.',world:'math',fields:[['x','نقطة البداية x₀',-5,8,.5],['rate','حجم الخطوة α',.02,.95,.01]],model:'f(x) = (x − 3)² + 2 · x الجديد = x − α · 2(x − 3)'},
+ circuit:{title:'مكثّف صغير، وزمن مختلف.',sub:'غيّر المقاومة والسعة. راقب شحن مكثّف من مصدر ثابت 5V.',question:'أيّهما أسرع شحنًا: سعة كبيرة أم صغيرة؟ ما أثر مضاعفة المقاومة؟',world:'ece',fields:[['r','المقاومة R · kΩ',1,20,1],['c','السعة C · µF',10,1000,10]],model:'V(t) = 5(1 − exp(−t/RC)) · نموذج مثالي، مكثّف غير مشحون.'},
+ physics:{title:'إلى أين تصل الرمية؟',sub:'غيّر زاوية الانطلاق والسرعة الابتدائية وشاهد المسار.',question:'جرّب 30° و60° بالسرعة نفسها. هل تحصل على المدى نفسه؟',world:'physics',fields:[['v','السرعة v · m/s',5,40,1],['a','زاوية الإطلاق · °',10,80,1]],model:'نموذج دون مقاومة الهواء. الانطلاق والعودة إلى الارتفاع نفسه، g = 9.81 m/s².'},
+ chemistry:{title:'تضيف ماءً… ماذا يبقى؟',sub:'نبدأ بـ 100mL من محلول تركيزه 1mol/L. أضف ماءً افتراضيًا.',question:'هل تنقص كمية المذاب أم يقلّ تركيزه؟ ماذا يحدث عند مضاعفة الحجم؟',world:'chemistry',fields:[['water','الماء المضاف · mL',0,900,10]],model:'C₂ = C₁V₁ / (V₁ + V الماء) · الأحجام قابلة للجمع، دون تفاعل أو فقد للمذاب.'}
+};
+function renderLab(){
+ const l=labInfo[labMode],v=labValues[labMode];
+ return `<div class="pagehead"><div class="label">الفكرة بين يديك</div><h1>مختبر الفضول.</h1><p>توقّع أولًا. حرّك. ثم اسأل: لماذا؟</p></div>
+ <div class="chips" style="margin-bottom:20px">${[['math','math','رياضيات'],['circuit','bolt','دوائر'],['physics','orbit','حركة'],['chemistry','flask','كيمياء']].map(([id,i,t])=>`<button data-action="labMode" data-v="${id}" class="chip ${labMode===id?'active':''}">${icon(i,16)}${t}</button>`).join('')}</div>
+ <div class="labgrid"><section class="panel"><h2 style="font-size:21px">${l.title}</h2><p class="hint">${l.sub}</p><div class="labcanvas" id="labCanvas" aria-live="off"></div><div class="labstats" id="labStats" aria-live="polite"></div><p class="hint ltr" style="text-align:right">${l.model}</p></section>
+ <section class="panel"><h3>ماذا لو…؟</h3><div class="labcontrols" style="margin-top:24px">${l.fields.map(([id,title,min,max,step])=>`<label>${title}<output id="out_${id}">${v[id]}</output><input data-slider="${id}" aria-label="${title}" type="range" min="${min}" max="${max}" step="${step}" value="${v[id]}"></label>`).join('')}</div><div class="question">${l.question}</div><button data-action="labNote" class="btn primary" style="margin-top:20px;width:100%">دوّن اكتشافي ${icon('pen',16)}</button><button class="btn" data-action="world" data-id="${l.world}" style="font-size:12px;width:100%;margin-top:6px">اكتشف المصادر ${icon('arrow',15)}</button></section></div>`;
+}
+function drawLab(){
+ if(!$('#labCanvas'))return;const v=labValues[labMode];let body='',stats=[];
+ const grid='<path d="M40 25V230H590M40 180H590M40 130H590M40 80H590M150 25V230M260 25V230M370 25V230M480 25V230M590 25V230" stroke="#e2e9e3" fill="none"/>';
+ const poly=points=>'<polyline points="'+points.map(p=>p.map(x=>x.toFixed(2)).join(',')).join(' ')+'" fill="none" stroke="#4d8972" stroke-width="3" stroke-linejoin="round"/>';
+ if(labMode==='math'){
+  const f=x=>(x-3)**2+2,X=x=>40+(x+6)/15*550,Y=y=>230-y/125*205;
+  body=grid+poly(Array.from({length:101},(_,i)=>{const x=-6+i*.15;return[X(x),Y(f(x))]}));
+  let x=v.x;for(let i=0;i<12;i++){const nx=x-v.rate*2*(x-3);body+='<path d="M'+X(x)+' '+Y(f(x))+'L'+X(nx)+' '+Y(f(nx))+'" stroke="#b99c62" stroke-width="1.3" opacity=".7"/><circle cx="'+X(x)+'" cy="'+Y(f(x))+'" r="'+(i===0?6:3.5)+'" fill="'+(i===0?'#b99c62':'#8875c1')+'"/>';x=nx}
+  body+='<circle cx="'+X(3)+'" cy="'+Y(2)+'" r="5" fill="#24685b"/><text x="352" y="255" fill="#7a8e7d" font-size="12">x</text><text x="48" y="20" fill="#7a8e7d" font-size="12">f(x)</text>';
+  stats=[['x بعد 12 خطوة',x.toFixed(3)],['القيمة المستهدفة','x = 3']];
+ }else if(labMode==='circuit'){
+  const tau=v.r*v.c*.001,vol=t=>5*(1-Math.exp(-t/tau));body=grid+poly(Array.from({length:201},(_,i)=>[40+i/200*550,230-vol(i/20)/5*200]));
+  body+='<path d="M95 25v205" stroke="#b99c62" stroke-dasharray="4 4"/><circle cx="95" cy="'+(230-vol(1)/5*200)+'" r="6" fill="#b99c62"/><text x="44" y="20" fill="#708577" font-size="12">5 V</text><text x="40" y="253" fill="#708577" font-size="12">0 s</text><text x="567" y="253" fill="#708577" font-size="12">10 s</text>';
+  stats=[['الثابت الزمني τ',(tau).toFixed(2)+' s'],['الجهد عند ثانية واحدة',vol(1).toFixed(2)+' V']];
+ }else if(labMode==='physics'){
+  const a=v.a*Math.PI/180,T=2*v.v*Math.sin(a)/9.81,R=v.v**2*Math.sin(2*a)/9.81,H=(v.v*Math.sin(a))**2/19.62,xmax=Math.max(12,R*1.1),ymax=Math.max(10,H*1.25);
+  body=grid+poly(Array.from({length:121},(_,i)=>{const t=T*i/120;return[40+v.v*Math.cos(a)*t/xmax*550,230-(v.v*Math.sin(a)*t-4.905*t*t)/ymax*195]}));
+  body+='<text x="45" y="20" fill="#708577" font-size="12">'+ymax.toFixed(0)+' m</text><text x="540" y="253" fill="#708577" font-size="12">'+xmax.toFixed(0)+' m</text>';
+  stats=[['المدى الأفقي',R.toFixed(2)+' m'],['زمن التحليق',T.toFixed(2)+' s']];
+ }else{
+  const total=100+v.water,concentration=100/total,h=25+total/1000*150;
+  body='<path d="M185 30v185q0 15 15 15h200q15 0 15-15V30" stroke="#8ca18b" fill="none" stroke-width="3"/><path d="M187 '+(230-h)+'H413V214q0 14-14 14H201q-14 0-14-14z" fill="#6a9b7d" opacity="'+(.12+concentration*.8)+'"/><path d="M187 '+(230-h)+'H413" stroke="#6a9b7d" stroke-width="2"/><text x="245" y="260" font-size="13" fill="#708577">'+total+' mL</text>'+Array.from({length:12},(_,i)=>'<circle cx="'+(210+(i%4)*55)+'" cy="'+(230-h*.2-Math.floor(i/4)*h*.27)+'" r="4" fill="#528c73"/>').join('');
+  stats=[['التركيز النهائي',concentration.toFixed(3)+' mol/L'],['كمية المذاب الثابتة','0.100 mol']];
+ }
+ $('#labCanvas').innerHTML='<svg viewBox="0 0 630 280" role="img" aria-label="رسم يتغيّر حسب القيم المدخلة">'+body+'</svg>';
+ $('#labStats').innerHTML=stats.map(([t,v])=>'<div><small>'+t+'</small><strong>'+v+'</strong></div>').join('');
+}
+function showSettings(){
+ const d=$('#settingsModal');
+ d.innerHTML=`<div class="dialoghead"><div class="grow"><h2 id="settingsTitle">رحلة تشبهك.</h2><p>غيّر ما يناسب يومك، واترك مساحة للفضول.</p></div><button class="iconbtn" data-action="closeSettings" aria-label="إغلاق">${icon('close',18)}</button></div><div class="settingsbody"><div class="formgrid"><label class="formfield">اسمك<input id="profileName" maxlength="35" value="${esc(state.name)}"></label><label class="formfield">وقت الجلسة<select id="profileMinutes">${[15,30,60].map(n=>`<option value="${n}" ${state.minutes===n?'selected':''}>${n} دقيقة</option>`).join('')}</select></label></div><label class="formfield">المذهب الذي أبدأ به في الفقه<select id="profileMadhhab">${['شافعي','حنفي','مالكي','حنبلي'].map(x=>`<option ${state.madhhab===x?'selected':''}>${x}</option>`).join('')}</select></label><p class="hint">اختيارك ينظّم التأسيس، مع احترام المذاهب الأربعة.</p><h3 style="margin-top:18px">عوالم تفضّلها لجلساتك</h3><div class="settingsworlds">${worlds.map(w=>`<button class="chip ${state.following.includes(w.id)?'active':''}" data-action="settingsFollow" data-id="${w.id}" aria-pressed="${state.following.includes(w.id)}">${icon(w.icon,14)}${w.name}</button>`).join('')}</div><div class="notice">التقدّم محفوظ في هذا المتصفح، دون حساب أو مزامنة. صدّر نسخة لنقلها إلى جهاز آخر أو قبل مسح بيانات المتصفح.</div><div class="row wrap"><button class="btn primary" data-action="saveSettings">حفظ اختياراتي ${icon('check',16)}</button><button class="btn outline" data-action="export">تصدير ${icon('download',15)}</button><button class="btn outline" data-action="import">استيراد نسخة</button></div><p class="hint" style="margin-top:14px">المصادر مختارة وليست توصية بكل ما تنشره الجهات. التخصّص يحتاج دراسة وتمرينًا ومراجعة مع أهل العلم.</p></div>`;
+ if(!d.open)d.showModal();
+}
+function showNote(world='character',prefill=''){
+ returnFocus=document.activeElement;const d=$('#noteModal');
+ d.dataset.world=world;d.innerHTML=`<div class="dialoghead"><div class="grow"><h2 id="noteTitle">فكرة تستحق أن تبقى.</h2><p>${byId(world).name}</p></div><button class="iconbtn" data-action="closeNote" aria-label="إغلاق">${icon('close',18)}</button></div><div class="settingsbody"><textarea id="newNoteText" maxlength="4000" style="width:100%;padding:13px;border:1px solid var(--line);border-radius:12px;min-height:150px" placeholder="فهمتُ… جرّبتُ… سأفعل…">${esc(prefill)}</textarea><button class="btn primary" data-action="saveNote" style="margin-top:13px">احفظ إلى أثري ${icon('pen',16)}</button></div>`;d.showModal();$('#newNoteText').focus();
+}
+function addNote(text,world){text=text.trim();if(!text){toast('اكتب فكرة صغيرة أولًا.');return false}state.notes.push({id:'n'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),world,day:today(),text:text.slice(0,4000)});save();toast('حُفظت فكرتك في دفتر الأثر.');return true}
+function exportState(){const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='madar-journey-'+today()+'.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);toast('نسخة رحلتك جاهزة للحفظ.')}
+document.addEventListener('click',e=>{
+ const b=e.target.closest('[data-action]');if(!b)return;
+ const a=b.dataset.action,id=b.dataset.id;
+ if(a==='nav'){go(b.dataset.v);return}
+ if(a==='settings'){showSettings();return}
+ if(a==='closeSettings'){$('#settingsModal').close();return}
+ if(a==='category'){category=id;render();return}
+ if(a==='world'){openWorld(id,b.dataset.tab||'discover');return}
+ if(a==='closeWorld'){$('#worldModal').close();return}
+ if(a==='worldTab'){openWorld(activeWorld,b.dataset.tab);return}
+ if(a==='follow'||a==='settingsFollow'){const i=state.following.indexOf(id);if(i>=0)state.following.splice(i,1);else state.following.push(id);save();if(a==='settingsFollow'){b.classList.toggle('active',i<0);b.setAttribute('aria-pressed',String(i<0))}else{render();if($('#worldModal').open)openWorld(activeWorld,worldTab)}return}
+ if(a==='bookmark'){const i=state.saved.indexOf(id);if(i>=0)state.saved.splice(i,1);else state.saved.push(id);save();b.classList.toggle('on',i<0);b.setAttribute('aria-pressed',String(i<0));if(view==='library')render();return}
+ if(a==='resourceDone'){const r=resources().find(r=>r.id===id);if(r){toggle(id,r.world,r.title);render();if($('#worldModal').open)openWorld(activeWorld,worldTab)}return}
+ if(a==='step'){const w=byId(activeWorld),i=+b.dataset.i;toggle('step:'+w.id+':'+i,w.id,w.steps[i]);render();openWorld(w.id,worldTab);return}
+ if(a==='minutes'){state.minutes=+b.dataset.n;save();render();return}
+ if(a==='dailyDone'){const t=dailyItems()[+b.dataset.i];const draft=$('#dailyJournal')?.value||'';toggle(t.id,t.world,t.title);render();if($('#dailyJournal'))$('#dailyJournal').value=draft;return}
+ if(a==='focusJournal'){$('#dailyJournal').focus();return}
+ if(a==='saveJournal'){if(addNote($('#dailyJournal').value,ensurePlan().world)){const id='daily:'+today()+':reflect';if(!done(id))toggle(id,'character','فكرة تتحوّل إلى أثر');render()}return}
+ if(a==='libMode'){libMode=b.dataset.v;render();return}
+ if(a==='addToggle'){adding=!adding;render();return}
+ if(a==='openLab'){$('#worldModal').close();labMode=b.dataset.mode;go('lab');return}
+ if(a==='labMode'){labMode=b.dataset.v;render();return}
+ if(a==='saveProject'){if(addNote($('#projectNote').value,activeWorld))$('#projectNote').value='';return}
+ if(a==='horizon'){horizon=b.dataset.v;render();return}
+ if(a==='moreNotes'){noteLimit+=30;render();return}
+ if(a==='newNote'){showNote();return}
+ if(a==='deleteNote'){state.notes=state.notes.filter(n=>n.id!==id);save();render();toast('حُذفت الفكرة.');return}
+ if(a==='bridge'){const bridges=[['math','رياضيات × كهرباء','كيف تتوقع زمن وصول مكثّف إلى 90% من جهد المصدر؟ جرّب مقاومات مختلفة ثم ابحث عن العلاقة.'],['travel','ثقافة × هندسة','اختر جسرًا أو قبةً في مدينة تحبّها. ما الشكل الذي يحمله؟ ارسم فكرتك وابحث عن تفسير إنشائي.'],['character','قرآن × أخلاق','اختر معنى فهمته من التفسير. ما الموقف الذي تستطيع أن تعيش فيه هذا المعنى غدًا؟'],['chemistry','كيمياء × رياضيات','كيف يتغيّر التركيز مع إضافة الماء؟ ارسم ثلاث نقاط من المختبر وابحث عن شكل العلاقة.']];const c=bridges[Math.floor(Date.parse(today())/86400000)%bridges.length];showNote(c[0],c[1]+'\n'+c[2]+'\n\nتوقّعي: \nما اختبرته: \nما تعلّمته: ');return}
+ if(a==='labNote'){const v=labValues[labMode],l=labInfo[labMode];showNote(l.world,'تجربتي: '+l.title+'\n'+l.fields.map(([id,label])=>label+': '+v[id]).join(' · ')+'\nلاحظتُ: ');return}
+ if(a==='closeNote'){$('#noteModal').close();return}
+ if(a==='saveNote'){if(addNote($('#newNoteText').value,$('#noteModal').dataset.world)){$('#noteModal').close();render()}return}
+ if(a==='saveSettings'){state.name=$('#profileName').value.trim()||'مسافر معرفة';state.minutes=+$('#profileMinutes').value;state.madhhab=$('#profileMadhhab').value;state.plan=null;save();$('#settingsModal').close();render();toast('رحلتك أصبحت أقرب إليك.');return}
+ if(a==='confirmImport'&&pendingImport){state=pendingImport;pendingImport=null;save();$('#noteModal').close();$('#settingsModal').close();query='';$('#search').value='';render();toast('عادت رحلتك، بأفكارها وخطواتها.');return}
+ if(a==='export'){exportState();return}
+ if(a==='import'){$('#importFile').click();return}
+});
+document.addEventListener('keydown',e=>{
+ const tab=e.target.closest('[role="tab"]');if(!tab||!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;
+ e.preventDefault();const tabs=['discover','path','practice'];let i=tabs.indexOf(worldTab);
+ i=e.key==='Home'?0:e.key==='End'?2:(i+(e.key==='ArrowLeft'?1:2))%3;
+ openWorld(activeWorld,tabs[i]);$('#worldModal [data-tab="'+tabs[i]+'"]').focus();
+});
+document.addEventListener('change',e=>{
+ const t=e.target;
+ if(t.dataset.project!==undefined){const w=byId(activeWorld),i=+t.dataset.project;toggle('project:'+w.id+':'+i,w.id,w.tasks[i]);render();return}
+ if(t.id==='filterWorld'){libWorld=t.value;render()}
+ if(t.id==='filterType'){libType=t.value;render()}
+ if(t.id==='filterLang'){libLang=t.value;render()}
+});
+document.addEventListener('input',e=>{
+ const t=e.target;
+ if(t.id==='search'){query=t.value.trim();view=query?'library':'home';render()}
+ if(t.dataset.slider){labValues[labMode][t.dataset.slider]=+t.value;$('#out_'+t.dataset.slider).textContent=t.value;drawLab()}
+});
+document.addEventListener('submit',e=>{
+ if(e.target.id!=='addSource')return;e.preventDefault();const f=new FormData(e.target),url=safeURL(f.get('url'));
+ if(!url||!String(f.get('title')).trim()){$('#sourceError').textContent='استخدم اسمًا ورابط http أو https صالحًا.';return}
+ state.custom.push({id:'u'+Date.now().toString(36),world:f.get('world'),title:String(f.get('title')).trim(),url,type:f.get('type'),lang:f.get('lang'),author:'إضافتي',desc:'مصدر أضفته إلى رحلتك.'});save();adding=false;libMode='all';libType='all';libLang='all';libWorld='all';query='';$('#search').value='';render();toast('مصدر جديد في مكتبتك.');
+});
+$('#importFile').addEventListener('change',async e=>{
+ const file=e.target.files[0];if(!file)return;try{if(file.size>3e6)throw Error('الملف أكبر من 3MB');const next=clean(JSON.parse(await file.text()));pendingImport=next;const d=$('#noteModal');d.innerHTML='<div class="dialoghead"><div class="grow"><h2 id="noteTitle">استعادة رحلتك</h2><p>راجع النسخة قبل استبدال تقدّمك الحالي.</p></div><button class="iconbtn" data-action="closeNote" aria-label="إغلاق">'+icon('close',18)+'</button></div><div class="settingsbody"><div class="notice">'+esc(next.name)+' · '+next.logs.length+' خطوات · '+next.notes.length+' أفكار</div><p class="hint">ستحل النسخة محل التقدّم الحالي على هذا المتصفح. يمكنك تصدير الحالية أولًا.</p><div class="row wrap" style="margin-top:18px"><button class="btn primary" data-action="confirmImport">استبدل واستورد</button><button class="btn outline" data-action="export">تصدير الحالية</button><button class="btn soft" data-action="closeNote">إلغاء</button></div></div>';d.showModal()}catch(err){toast('تعذّر الاستيراد. اختر ملف تصدير مَدار صالحًا.')}finally{e.target.value=''}
+});
+for(const d of $$('dialog'))d.addEventListener('click',e=>{if(e.target===d){const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close()}});
+$('#brandmark').innerHTML=icon('orbit',28);$('#mobilemark').innerHTML=icon('orbit',27);$('#searchicon').innerHTML=icon('search',19);$('#settingsicon').innerHTML=icon('settings',18);
+$('#date').textContent=new Intl.DateTimeFormat('ar',{timeZone:'Asia/Jerusalem',weekday:'long',day:'numeric',month:'long'}).format(new Date());
+render();
+</script>
+</body></html>
